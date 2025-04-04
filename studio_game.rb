@@ -24,4 +24,5 @@ game.add_player(player_4)
 
 emojis()
 game.play(3)
+game.print_stats
 emojis()

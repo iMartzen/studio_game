@@ -3,13 +3,13 @@ class Player
   attr_accessor :name
 
   def initialize(name, health=100)
-    @name = name.capitalize
+    @name = name.split(" ").map { |word| word.capitalize }.join(" ")
     @health = health
     @found_treasures = Hash.new(0)
   end
 
   def to_s
-    "I'm #{@name} with a health of #{@health} and a score of #{score + @found_treasures.values.sum}"
+    "I'm #{@name} with a health of #{@health} and a score of #{score}"
   end
 
   def boost
@@ -29,6 +29,10 @@ class Player
   end
 
   def found_treasure(name, points)
-    @found_treasures[name] += points
+    @found_treasures[name.capitalize] += points
+  end
+  
+  def points
+    @found_treasures.values.sum
   end
 end

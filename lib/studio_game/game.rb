@@ -17,15 +17,23 @@ class Game
     @players << player
   end
 
+  def print_stats
+    puts "\n Game Stats:"
+    puts "-" * 30
+    puts sorted_players
+  end
+
+  def sorted_players
+    @players.sort_by { |player| player.score }.reverse
+  end
+
   def play(rounds = 1)
     puts "Before playing:"
     puts @players
     puts ""
 
     puts "The following treasures can be found:"
-    TreasureTrove::TREASURES.each do |treasure|
-      puts "A #{treasure.name} is worth #{treasure.points} points"
-    end
+    puts TreasureTrove.treasure_items
 
     0.upto(rounds) do |round|
       puts "\nRound #{round}:"
@@ -51,5 +59,20 @@ class Game
     puts ""
     puts "After playing:"
     puts @players
+
+    @players.each do |player|
+      puts "\n#{player.name}'s treasure point totals:"
+      player.found_treasures.each do |name, points|
+        puts "#{name}: #{points}"
+      end
+      puts "total: #{player.points}"
+    end
+
+    puts "\nHigh Scores:"
+    sorted_players.each do |player|
+      name = player.name.ljust(20, ".")
+      points = player.score.round.to_s.rjust(5)
+      puts "#{name}#{points}"
+    end
   end
 end
