@@ -58,8 +58,8 @@ class Game
     puts "The following treasures can be found:"
     puts TreasureTrove.treasure_items
 
-    0.upto(rounds) do |round|
-      puts "\nRound #{round}:"
+    rounds.times do |round|
+      puts "\nRound #{round+1}:"
       @players.each do |player|
         number_rolled = roll_dice()
         case number_rolled
