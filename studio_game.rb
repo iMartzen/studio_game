@@ -17,13 +17,13 @@ game.load_players(ARGV.shift || players_file)
 emojis()
 
 loop do
-  print "\nHow many game rounds? ('quit' to exit) "
+  print "\nHow many game rounds? ('q, quit' to exit) "
   answer = gets.chomp.downcase 
 
   case answer
 	when /^\d+$/ # types number
 		game.play(answer.to_i)
-	when "quit", "exit" # types quit
+	when "q", "quit", "exit" # types quit
 		game.print_stats
 		break
 	else 

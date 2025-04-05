@@ -35,4 +35,12 @@ class Player
   def points
     @found_treasures.values.sum
   end
+
+  def self.from_csv(line)
+    name, health = line.split(',')
+    Player.new(name, Integer(health))
+  rescue ArgumentError
+    puts "Ignored invalid health: #{health}"
+    Player.new(name)
+  end
 end

@@ -19,10 +19,12 @@ class Game
 
   def load_players(from_file)
     File.readlines(from_file, chomp: true).each do |line|
-      name, health = line.split(',')
-      player = Player.new(name, health.to_i)
+      player = Player.from_csv(line)
       add_player(player)
     end
+  rescue Errno::ENOENT
+    puts "Whoops, #{from_file} not found!"
+    exit 1
   end
 
   def sorted_players
