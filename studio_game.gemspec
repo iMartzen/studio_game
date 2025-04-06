@@ -1,5 +1,5 @@
 Gem::Specification.new do |spec|
-  spec.name        = "studio_game"
+  spec.name        = "martzens_studio_game"
   spec.version     = "1.0.0"
   spec.author      = "iMartzen"
   spec.email       = "gem@martzen.nl"

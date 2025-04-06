@@ -1,2 +1,7 @@
 .DS_*
+
+# output files
 high_scores.txt
+
+# built gem packages
+*.gem
