@@ -31,5 +31,10 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Run tests
-      run: bundle exec rake
+    - name: Run tests with coverage
+      run: bundle exec rake coverage
+    - name: Display coverage results
+      if: always()
+      run: |
+        echo "Code Coverage Results:"
+        cat coverage/.last_run.json || echo "Coverage results not available"
