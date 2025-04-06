@@ -1,4 +1,10 @@
-require "mini_test/autorun"
+require_relative "../simplecov_setup"
+require "minitest/autorun"
 
 require_relative "game_test"
 require_relative "player_test"
+require_relative "berserk_player_test"
+require_relative "clumsy_player_test"
+require_relative "treasure_trove_test"
+require_relative "playable_test"
+require_relative "auditable_test"

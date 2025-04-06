@@ -11,4 +11,6 @@ Gem::Specification.new do |spec|
   spec.executables = ["studio_game"]
 
   spec.required_ruby_version = ">= 3.2.0"
+  
+  spec.add_development_dependency "simplecov", "~> 0.22.0"
 end
