@@ -6,6 +6,7 @@ module StudioGame
   class ClumsyPlayerTest < Minitest::Test
     def setup
       @player = ClumsyPlayer.new("klutz", 100, 3)
+      $stdout = StringIO.new   
     end
 
     def test_has_a_capitalized_name

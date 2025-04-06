@@ -91,7 +91,7 @@ module StudioGame
       
       assert_equal "Finn", player.name
       assert_equal 100, player.health  # Default health
-      assert_match /Ignored invalid health: invalid/, output
+      assert_match(/Ignored invalid health: invalid/, output)
     end
   end
 end

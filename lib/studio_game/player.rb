@@ -3,8 +3,8 @@ require_relative 'playable'
 module StudioGame
   class Player
     include Playable
-    attr_reader :found_treasures
-    attr_accessor :name, :health
+    attr_reader :found_treasures, :name
+    attr_accessor :health
 
     def initialize(name, health=100)
       @name = name.split(" ").map { |word| word.capitalize }.join(" ")

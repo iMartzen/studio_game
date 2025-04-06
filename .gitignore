@@ -6,5 +6,7 @@ high_scores.txt
 # built gem packages
 *.gem
 
-# coverage
+# directories
 coverage/
+vendor/
+.bundle/

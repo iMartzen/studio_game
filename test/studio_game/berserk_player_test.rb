@@ -7,6 +7,7 @@ module StudioGame
     def setup
       @initial_health = 50
       @player = BerserkPlayer.new("berserker", @initial_health)
+      $stdout = StringIO.new     
     end
 
     def test_has_a_capitalized_name
