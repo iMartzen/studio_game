@@ -13,18 +13,4 @@ module StudioGame
       @boost_factor.times { super }
     end
   end
-
-  if __FILE__ == $0
-    clumsy = ClumsyPlayer.new("klutz")
-  
-    clumsy.found_treasure("flute", 50)
-    clumsy.found_treasure("flute", 50)
-    clumsy.found_treasure("flute", 50)
-    clumsy.found_treasure("star", 100)
-  
-    clumsy.found_treasures.each do |name, points|
-      puts "#{name}: #{points} points"
-    end
-    puts "#{clumsy.points} total points"
-  end
 end

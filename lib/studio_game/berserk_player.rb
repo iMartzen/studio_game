@@ -21,11 +21,4 @@ module StudioGame
       berserk? ? boost : super
     end
   end
-
-  if __FILE__ == $0
-    berserker = BerserkPlayer.new("berserker", 50)
-    6.times { berserker.boost }
-    2.times { berserker.drain }
-    puts berserker.health
-  end
 end
