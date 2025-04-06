@@ -1,6 +1,9 @@
+require_relative 'playable'
+
 class Player
-  attr_reader :health, :found_treasures
-  attr_accessor :name
+  include Playable
+  attr_reader :found_treasures
+  attr_accessor :name, :health
 
   def initialize(name, health=100)
     @name = name.split(" ").map { |word| word.capitalize }.join(" ")
@@ -11,14 +14,6 @@ class Player
   def to_s
     "I'm #{@name} with a health of #{@health} and a score of #{score}"
   end
-
-  def boost
-    @health += 15
-  end
-
-  def drain
-    @health = [@health - 10, 0].max
-  end 
 
   def score
     @health + @name.length 
