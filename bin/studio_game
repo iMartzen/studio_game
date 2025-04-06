@@ -1,7 +1,8 @@
-require_relative "lib/studio_game/player"
-require_relative "lib/studio_game/clumsy_player"
-require_relative "lib/studio_game/berserk_player"
-require_relative "lib/studio_game/game"
+#!/usr/bin/env ruby
+
+require_relative "../lib/studio_game/game"
+require_relative "../lib/studio_game/clumsy_player"
+require_relative "../lib/studio_game/berserk_player"
 
 puts ""
 puts "Let's play"
