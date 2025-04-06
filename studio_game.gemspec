@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name        = "martzens_studio_game"
-  spec.version     = "1.0.0"
+  spec.version     = "1.0.1"
   spec.author      = "iMartzen"
   spec.email       = "gem@martzen.nl"
   spec.summary     = "A simple game to play with friends"
